@@ -1,0 +1,61 @@
+\hypertarget{classcsis3700_1_1phys__sprite}{\section{csis3700\-:\-:phys\-\_\-sprite Class Reference}
+\label{classcsis3700_1_1phys__sprite}\index{csis3700\-::phys\-\_\-sprite@{csis3700\-::phys\-\_\-sprite}}
+}
+
+
+{\ttfamily \#include $<$phys\-\_\-sprite.\-h$>$}
+
+Inheritance diagram for csis3700\-:\-:phys\-\_\-sprite\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcsis3700_1_1phys__sprite}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcsis3700_1_1phys__sprite_a300b8fcf6d18176c9dced92cd90edd99}{{\bfseries phys\-\_\-sprite} (float initial\-\_\-x=0, float initial\-\_\-y=0, float initial\-\_\-vx=0, float initial\-\_\-vy=0)}\label{classcsis3700_1_1phys__sprite_a300b8fcf6d18176c9dced92cd90edd99}
+
+\item 
+virtual void \hyperlink{classcsis3700_1_1phys__sprite_a3bb24599b1bc2fd13846826308914db4}{advance\-\_\-by\-\_\-time} (double dt)
+\item 
+\hypertarget{classcsis3700_1_1phys__sprite_af69d2201b23b3ebc3e81757f473285a1}{virtual \hyperlink{classcsis3700_1_1vec2d}{vec2d} {\bfseries get\-\_\-acceleration} () const }\label{classcsis3700_1_1phys__sprite_af69d2201b23b3ebc3e81757f473285a1}
+
+\item 
+\hypertarget{classcsis3700_1_1phys__sprite_a72682ff328159518f110a935ff8670dd}{virtual \hyperlink{classcsis3700_1_1vec2d}{vec2d} {\bfseries get\-\_\-velocity} () const }\label{classcsis3700_1_1phys__sprite_a72682ff328159518f110a935ff8670dd}
+
+\item 
+\hypertarget{classcsis3700_1_1phys__sprite_a2dd7b26fd33125f84f3eccabac146dcd}{virtual void {\bfseries set\-\_\-velocity} (const \hyperlink{classcsis3700_1_1vec2d}{vec2d} \&v)}\label{classcsis3700_1_1phys__sprite_a2dd7b26fd33125f84f3eccabac146dcd}
+
+\item 
+\hypertarget{classcsis3700_1_1phys__sprite_ade2d0f1d3e03981d89a8549ec3a1999c}{virtual void {\bfseries add\-\_\-force} (\hyperlink{classcsis3700_1_1vec2d}{vec2d} f)}\label{classcsis3700_1_1phys__sprite_ade2d0f1d3e03981d89a8549ec3a1999c}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Physical sprites move using an approximation of newtonian kinematics. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcsis3700_1_1phys__sprite_a3bb24599b1bc2fd13846826308914db4}{\index{csis3700\-::phys\-\_\-sprite@{csis3700\-::phys\-\_\-sprite}!advance\-\_\-by\-\_\-time@{advance\-\_\-by\-\_\-time}}
+\index{advance\-\_\-by\-\_\-time@{advance\-\_\-by\-\_\-time}!csis3700::phys_sprite@{csis3700\-::phys\-\_\-sprite}}
+\subsubsection[{advance\-\_\-by\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void csis3700\-::phys\-\_\-sprite\-::advance\-\_\-by\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcsis3700_1_1phys__sprite_a3bb24599b1bc2fd13846826308914db4}
+Move time forward by the specified amount 
+
+Reimplemented from \hyperlink{classcsis3700_1_1sprite_ac4d932bda87ce98a36579de3e1392a8f}{csis3700\-::sprite}.
+
+
+
+Reimplemented in \hyperlink{classcsis3700_1_1player__sprite_ac2453e0b3934ac639d704c4ecca7493d}{csis3700\-::player\-\_\-sprite}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+phys\-\_\-sprite.\-h\item 
+phys\-\_\-sprite.\-C\end{DoxyCompactItemize}

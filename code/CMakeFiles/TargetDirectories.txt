@@ -1,0 +1,2 @@
+/home/joey/Dropbox/Project2/code/CMakeFiles/doc.dir
+/home/joey/Dropbox/Project2/code/CMakeFiles/main.dir

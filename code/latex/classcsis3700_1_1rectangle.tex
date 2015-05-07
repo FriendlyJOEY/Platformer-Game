@@ -1,0 +1,112 @@
+\hypertarget{classcsis3700_1_1rectangle}{\section{csis3700\-:\-:rectangle Class Reference}
+\label{classcsis3700_1_1rectangle}\index{csis3700\-::rectangle@{csis3700\-::rectangle}}
+}
+
+
+{\ttfamily \#include $<$rectangle.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcsis3700_1_1rectangle_a12769987479c35eb82d4c327c5af31fb}{rectangle} (float x, float y, float width, float height)
+\item 
+\hyperlink{classcsis3700_1_1rectangle_a343355b4f013ac440b155d634ebc1c5c}{rectangle} (\hyperlink{classcsis3700_1_1vec2d}{vec2d} corner, float width, float height)
+\item 
+\hyperlink{classcsis3700_1_1rectangle_a65e217f0a67f76c2014b34f5995c689d}{rectangle} (\hyperlink{classcsis3700_1_1vec2d}{vec2d} \hyperlink{classcsis3700_1_1rectangle_aab0dc95e90e205d5e4f5e7f636fee8e3}{upper\-\_\-left\-\_\-corner}, \hyperlink{classcsis3700_1_1vec2d}{vec2d} \hyperlink{classcsis3700_1_1rectangle_a5ba599fc8d08e36be15c7d4e017f9d8b}{lower\-\_\-right\-\_\-corner})
+\item 
+\hypertarget{classcsis3700_1_1rectangle_afcf0790126b736866d883b51bdb5e2c2}{float {\bfseries get\-\_\-width} () const }\label{classcsis3700_1_1rectangle_afcf0790126b736866d883b51bdb5e2c2}
+
+\item 
+\hypertarget{classcsis3700_1_1rectangle_ae0826725dc934c151f5ad37b37c9c777}{float {\bfseries get\-\_\-height} () const }\label{classcsis3700_1_1rectangle_ae0826725dc934c151f5ad37b37c9c777}
+
+\item 
+\hypertarget{classcsis3700_1_1rectangle_a417cca148168261b1dd6df6f9379c435}{float {\bfseries get\-\_\-area} () const }\label{classcsis3700_1_1rectangle_a417cca148168261b1dd6df6f9379c435}
+
+\item 
+\hyperlink{classcsis3700_1_1vec2d}{vec2d} \hyperlink{classcsis3700_1_1rectangle_aab0dc95e90e205d5e4f5e7f636fee8e3}{upper\-\_\-left\-\_\-corner} () const 
+\item 
+\hyperlink{classcsis3700_1_1vec2d}{vec2d} \hyperlink{classcsis3700_1_1rectangle_a5ba599fc8d08e36be15c7d4e017f9d8b}{lower\-\_\-right\-\_\-corner} () const 
+\item 
+\hyperlink{classcsis3700_1_1rectangle}{rectangle} \hyperlink{classcsis3700_1_1rectangle_a3f9209f4029bbf57b117d509e041265c}{intersection} (const \hyperlink{classcsis3700_1_1rectangle}{rectangle} \&other) const 
+\item 
+bool \hyperlink{classcsis3700_1_1rectangle_a1dadf9d8f1f9333a3c5f24e8be295735}{contains} (\hyperlink{classcsis3700_1_1vec2d}{vec2d} point) const 
+\item 
+bool \hyperlink{classcsis3700_1_1rectangle_ae19050257ed8eb56aab750134798ba7e}{is\-\_\-degenerate} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I represent an oriented rectangle. My sides are parallel to the x and y axes of the coordinate system. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcsis3700_1_1rectangle_a12769987479c35eb82d4c327c5af31fb}{\index{csis3700\-::rectangle@{csis3700\-::rectangle}!rectangle@{rectangle}}
+\index{rectangle@{rectangle}!csis3700::rectangle@{csis3700\-::rectangle}}
+\subsubsection[{rectangle}]{\setlength{\rightskip}{0pt plus 5cm}csis3700\-::rectangle\-::rectangle (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{width, }
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)}}\label{classcsis3700_1_1rectangle_a12769987479c35eb82d4c327c5af31fb}
+Construct a rectangle. Note if width or height is negative then this rectangle is considered degenerate (empty). \hypertarget{classcsis3700_1_1rectangle_a343355b4f013ac440b155d634ebc1c5c}{\index{csis3700\-::rectangle@{csis3700\-::rectangle}!rectangle@{rectangle}}
+\index{rectangle@{rectangle}!csis3700::rectangle@{csis3700\-::rectangle}}
+\subsubsection[{rectangle}]{\setlength{\rightskip}{0pt plus 5cm}csis3700\-::rectangle\-::rectangle (
+\begin{DoxyParamCaption}
+\item[{{\bf vec2d}}]{corner, }
+\item[{float}]{width, }
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)}}\label{classcsis3700_1_1rectangle_a343355b4f013ac440b155d634ebc1c5c}
+Construct a rectangle by specifying the position of its upper left corner as well as its dimensions. \hypertarget{classcsis3700_1_1rectangle_a65e217f0a67f76c2014b34f5995c689d}{\index{csis3700\-::rectangle@{csis3700\-::rectangle}!rectangle@{rectangle}}
+\index{rectangle@{rectangle}!csis3700::rectangle@{csis3700\-::rectangle}}
+\subsubsection[{rectangle}]{\setlength{\rightskip}{0pt plus 5cm}csis3700\-::rectangle\-::rectangle (
+\begin{DoxyParamCaption}
+\item[{{\bf vec2d}}]{upper\-\_\-left\-\_\-corner, }
+\item[{{\bf vec2d}}]{lower\-\_\-right\-\_\-corner}
+\end{DoxyParamCaption}
+)}}\label{classcsis3700_1_1rectangle_a65e217f0a67f76c2014b34f5995c689d}
+Construct a rectangle given two corners. The order of the corners is important. upper\-\_\-left\-\_\-corner must be above and to the left of lower\-\_\-right\-\_\-corner or the rectangle will be degenerate. Note orientation is in terms of typical graphical coordinates (increasing y is down). 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcsis3700_1_1rectangle_a1dadf9d8f1f9333a3c5f24e8be295735}{\index{csis3700\-::rectangle@{csis3700\-::rectangle}!contains@{contains}}
+\index{contains@{contains}!csis3700::rectangle@{csis3700\-::rectangle}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool csis3700\-::rectangle\-::contains (
+\begin{DoxyParamCaption}
+\item[{{\bf vec2d}}]{point}
+\end{DoxyParamCaption}
+) const}}\label{classcsis3700_1_1rectangle_a1dadf9d8f1f9333a3c5f24e8be295735}
+Returns true iff this rectangle contains the point specified by the supplied vector (relative to the origin). \hypertarget{classcsis3700_1_1rectangle_a3f9209f4029bbf57b117d509e041265c}{\index{csis3700\-::rectangle@{csis3700\-::rectangle}!intersection@{intersection}}
+\index{intersection@{intersection}!csis3700::rectangle@{csis3700\-::rectangle}}
+\subsubsection[{intersection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rectangle} csis3700\-::rectangle\-::intersection (
+\begin{DoxyParamCaption}
+\item[{const {\bf rectangle} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classcsis3700_1_1rectangle_a3f9209f4029bbf57b117d509e041265c}
+Return the rectangle representing the intersection (overlap) between this rectangle and other. If I do not intersect other, return a degenerate rectangle. \hypertarget{classcsis3700_1_1rectangle_ae19050257ed8eb56aab750134798ba7e}{\index{csis3700\-::rectangle@{csis3700\-::rectangle}!is\-\_\-degenerate@{is\-\_\-degenerate}}
+\index{is\-\_\-degenerate@{is\-\_\-degenerate}!csis3700::rectangle@{csis3700\-::rectangle}}
+\subsubsection[{is\-\_\-degenerate}]{\setlength{\rightskip}{0pt plus 5cm}bool csis3700\-::rectangle\-::is\-\_\-degenerate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcsis3700_1_1rectangle_ae19050257ed8eb56aab750134798ba7e}
+Return true if this rectangle is degenerate. A degenerate rectangle is one with negative width or height. \hypertarget{classcsis3700_1_1rectangle_a5ba599fc8d08e36be15c7d4e017f9d8b}{\index{csis3700\-::rectangle@{csis3700\-::rectangle}!lower\-\_\-right\-\_\-corner@{lower\-\_\-right\-\_\-corner}}
+\index{lower\-\_\-right\-\_\-corner@{lower\-\_\-right\-\_\-corner}!csis3700::rectangle@{csis3700\-::rectangle}}
+\subsubsection[{lower\-\_\-right\-\_\-corner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec2d} csis3700\-::rectangle\-::lower\-\_\-right\-\_\-corner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcsis3700_1_1rectangle_a5ba599fc8d08e36be15c7d4e017f9d8b}
+Return my lower right corner \hypertarget{classcsis3700_1_1rectangle_aab0dc95e90e205d5e4f5e7f636fee8e3}{\index{csis3700\-::rectangle@{csis3700\-::rectangle}!upper\-\_\-left\-\_\-corner@{upper\-\_\-left\-\_\-corner}}
+\index{upper\-\_\-left\-\_\-corner@{upper\-\_\-left\-\_\-corner}!csis3700::rectangle@{csis3700\-::rectangle}}
+\subsubsection[{upper\-\_\-left\-\_\-corner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec2d} csis3700\-::rectangle\-::upper\-\_\-left\-\_\-corner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classcsis3700_1_1rectangle_aab0dc95e90e205d5e4f5e7f636fee8e3}
+Return my upper left corner 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+rectangle.\-h\item 
+rectangle.\-C\end{DoxyCompactItemize}

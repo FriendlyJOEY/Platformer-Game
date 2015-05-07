@@ -1,0 +1,151 @@
+\hypertarget{classcsis3700_1_1sprite}{\section{csis3700\-:\-:sprite Class Reference}
+\label{classcsis3700_1_1sprite}\index{csis3700\-::sprite@{csis3700\-::sprite}}
+}
+Inheritance diagram for csis3700\-:\-:sprite\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcsis3700_1_1sprite}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcsis3700_1_1sprite_a5395ad1b481e56895f11d57c7a052353}{{\bfseries sprite} (float initial\-\_\-x, float initial\-\_\-y)}\label{classcsis3700_1_1sprite_a5395ad1b481e56895f11d57c7a052353}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_a0b6e3ec9733f1300aac47ecf8570ee0b}{void {\bfseries set\-\_\-image\-\_\-sequence} (\hyperlink{classcsis3700_1_1image__sequence}{image\-\_\-sequence} $\ast$s)}\label{classcsis3700_1_1sprite_a0b6e3ec9733f1300aac47ecf8570ee0b}
+
+\item 
+virtual \hyperlink{classcsis3700_1_1sprite_a8f6db48ecf33279af2d084a344baae8c}{$\sim$sprite} ()
+\item 
+\hyperlink{classcsis3700_1_1sprite_adff79f206ea0703727a72287242fd8b1}{sprite} (const \hyperlink{classcsis3700_1_1sprite}{sprite} \&other)
+\item 
+\hypertarget{classcsis3700_1_1sprite_abd31e459d917f4789dd203730144e19a}{\hyperlink{classcsis3700_1_1sprite}{sprite} \& {\bfseries operator=} (const \hyperlink{classcsis3700_1_1sprite}{sprite} \&other)}\label{classcsis3700_1_1sprite_abd31e459d917f4789dd203730144e19a}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_a3ce0e3e67fc21797193f799b3c529630}{virtual int {\bfseries get\-\_\-width} () const }\label{classcsis3700_1_1sprite_a3ce0e3e67fc21797193f799b3c529630}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_a9f8719b41f7edeee77a56b548a339001}{virtual int {\bfseries get\-\_\-height} () const }\label{classcsis3700_1_1sprite_a9f8719b41f7edeee77a56b548a339001}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_af46c020f2e3c6e53c4d31300e7e3c9dc}{virtual float {\bfseries get\-\_\-x} () const }\label{classcsis3700_1_1sprite_af46c020f2e3c6e53c4d31300e7e3c9dc}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_aa546c86a477ef21fda91618d9e751bd8}{virtual float {\bfseries get\-\_\-y} () const }\label{classcsis3700_1_1sprite_aa546c86a477ef21fda91618d9e751bd8}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_acc128701e9bc6949168ce99ac7f95e70}{virtual \hyperlink{classcsis3700_1_1vec2d}{vec2d} {\bfseries get\-\_\-position} () const }\label{classcsis3700_1_1sprite_acc128701e9bc6949168ce99ac7f95e70}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_a433b1dbe4695990e42490d12d1bfac68}{virtual void {\bfseries set\-\_\-position} (\hyperlink{classcsis3700_1_1vec2d}{vec2d} p)}\label{classcsis3700_1_1sprite_a433b1dbe4695990e42490d12d1bfac68}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_a947c4b01559cbcd9c4dffbc6b39c6fbf}{virtual \hyperlink{classcsis3700_1_1vec2d}{vec2d} {\bfseries get\-\_\-velocity} () const =0}\label{classcsis3700_1_1sprite_a947c4b01559cbcd9c4dffbc6b39c6fbf}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_a3c43d72d94f5428d06d6f01b8753abe9}{virtual void {\bfseries set\-\_\-velocity} (const \hyperlink{classcsis3700_1_1vec2d}{vec2d} \&v)=0}\label{classcsis3700_1_1sprite_a3c43d72d94f5428d06d6f01b8753abe9}
+
+\item 
+\hypertarget{classcsis3700_1_1sprite_a01f24c59febf0c1fdd9ec0540ac02959}{virtual bool {\bfseries is\-\_\-passive} () const }\label{classcsis3700_1_1sprite_a01f24c59febf0c1fdd9ec0540ac02959}
+
+\item 
+virtual void \hyperlink{classcsis3700_1_1sprite_a6a69657522664635f116e05648792555}{draw} ()
+\item 
+virtual bool \hyperlink{classcsis3700_1_1sprite_a77871f0f7f7fca2af4b09302e9ec074c}{collides\-\_\-with} (const \hyperlink{classcsis3700_1_1sprite}{sprite} \&other) const 
+\item 
+virtual void \hyperlink{classcsis3700_1_1sprite_ac4d932bda87ce98a36579de3e1392a8f}{advance\-\_\-by\-\_\-time} (double dt)
+\item 
+virtual \hyperlink{classcsis3700_1_1rectangle}{rectangle} \hyperlink{classcsis3700_1_1sprite_a103e85a7cbc300db9c0f6bd5abb392dc}{bounding\-\_\-box} () const 
+\item 
+virtual \hyperlink{classcsis3700_1_1rectangle}{rectangle} \hyperlink{classcsis3700_1_1sprite_a979bf4a0de675c375146d4e6bc7365be}{collision\-\_\-rectangle} (const \hyperlink{classcsis3700_1_1sprite}{sprite} \&other) const 
+\item 
+\hypertarget{classcsis3700_1_1sprite_a4bf20253e1bc1825bfe73cdfcbb532d2}{virtual void {\bfseries resolve} (const \hyperlink{classcsis3700_1_1collision}{collision} \&\hyperlink{classcsis3700_1_1collision}{collision}, \hyperlink{classcsis3700_1_1sprite}{sprite} $\ast$other)=0}\label{classcsis3700_1_1sprite_a4bf20253e1bc1825bfe73cdfcbb532d2}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcsis3700_1_1vec2d}{vec2d} \hyperlink{classcsis3700_1_1sprite_aab9ac03c13c18eca432f5db06a8383b8}{position}
+\item 
+\hyperlink{classcsis3700_1_1image__sequence}{image\-\_\-sequence} $\ast$ \hyperlink{classcsis3700_1_1sprite_aa65b73f9bf7d266e57236f5b606b36e1}{sequence}
+\item 
+double \hyperlink{classcsis3700_1_1sprite_af12d2211006b3a184af6b70ed9e4235a}{time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcsis3700_1_1sprite_a8f6db48ecf33279af2d084a344baae8c}{\index{csis3700\-::sprite@{csis3700\-::sprite}!$\sim$sprite@{$\sim$sprite}}
+\index{$\sim$sprite@{$\sim$sprite}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{$\sim$sprite}]{\setlength{\rightskip}{0pt plus 5cm}csis3700\-::sprite\-::$\sim$sprite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcsis3700_1_1sprite_a8f6db48ecf33279af2d084a344baae8c}
+Destructor \hypertarget{classcsis3700_1_1sprite_adff79f206ea0703727a72287242fd8b1}{\index{csis3700\-::sprite@{csis3700\-::sprite}!sprite@{sprite}}
+\index{sprite@{sprite}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{sprite}]{\setlength{\rightskip}{0pt plus 5cm}csis3700\-::sprite\-::sprite (
+\begin{DoxyParamCaption}
+\item[{const {\bf sprite} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classcsis3700_1_1sprite_adff79f206ea0703727a72287242fd8b1}
+these two should cause errors, no copying! 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcsis3700_1_1sprite_ac4d932bda87ce98a36579de3e1392a8f}{\index{csis3700\-::sprite@{csis3700\-::sprite}!advance\-\_\-by\-\_\-time@{advance\-\_\-by\-\_\-time}}
+\index{advance\-\_\-by\-\_\-time@{advance\-\_\-by\-\_\-time}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{advance\-\_\-by\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void csis3700\-::sprite\-::advance\-\_\-by\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcsis3700_1_1sprite_ac4d932bda87ce98a36579de3e1392a8f}
+Move time forward by the specified amount 
+
+Reimplemented in \hyperlink{classcsis3700_1_1phys__sprite_a3bb24599b1bc2fd13846826308914db4}{csis3700\-::phys\-\_\-sprite}, and \hyperlink{classcsis3700_1_1player__sprite_ac2453e0b3934ac639d704c4ecca7493d}{csis3700\-::player\-\_\-sprite}.
+
+\hypertarget{classcsis3700_1_1sprite_a103e85a7cbc300db9c0f6bd5abb392dc}{\index{csis3700\-::sprite@{csis3700\-::sprite}!bounding\-\_\-box@{bounding\-\_\-box}}
+\index{bounding\-\_\-box@{bounding\-\_\-box}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{bounding\-\_\-box}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rectangle} csis3700\-::sprite\-::bounding\-\_\-box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcsis3700_1_1sprite_a103e85a7cbc300db9c0f6bd5abb392dc}
+Return this sprite's bounding box \hypertarget{classcsis3700_1_1sprite_a77871f0f7f7fca2af4b09302e9ec074c}{\index{csis3700\-::sprite@{csis3700\-::sprite}!collides\-\_\-with@{collides\-\_\-with}}
+\index{collides\-\_\-with@{collides\-\_\-with}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{collides\-\_\-with}]{\setlength{\rightskip}{0pt plus 5cm}bool csis3700\-::sprite\-::collides\-\_\-with (
+\begin{DoxyParamCaption}
+\item[{const {\bf sprite} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcsis3700_1_1sprite_a77871f0f7f7fca2af4b09302e9ec074c}
+Returns true iff I collide with other. Default implementation returns true iff my bounding box overlaps other's. \hypertarget{classcsis3700_1_1sprite_a979bf4a0de675c375146d4e6bc7365be}{\index{csis3700\-::sprite@{csis3700\-::sprite}!collision\-\_\-rectangle@{collision\-\_\-rectangle}}
+\index{collision\-\_\-rectangle@{collision\-\_\-rectangle}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{collision\-\_\-rectangle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf rectangle} csis3700\-::sprite\-::collision\-\_\-rectangle (
+\begin{DoxyParamCaption}
+\item[{const {\bf sprite} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcsis3700_1_1sprite_a979bf4a0de675c375146d4e6bc7365be}
+Return the intersection of this sprite's bounding box with other's bounding box. \hypertarget{classcsis3700_1_1sprite_a6a69657522664635f116e05648792555}{\index{csis3700\-::sprite@{csis3700\-::sprite}!draw@{draw}}
+\index{draw@{draw}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void csis3700\-::sprite\-::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classcsis3700_1_1sprite_a6a69657522664635f116e05648792555}
+Draw this sprite. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classcsis3700_1_1sprite_aab9ac03c13c18eca432f5db06a8383b8}{\index{csis3700\-::sprite@{csis3700\-::sprite}!position@{position}}
+\index{position@{position}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec2d} csis3700\-::sprite\-::position\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcsis3700_1_1sprite_aab9ac03c13c18eca432f5db06a8383b8}
+My position \hypertarget{classcsis3700_1_1sprite_aa65b73f9bf7d266e57236f5b606b36e1}{\index{csis3700\-::sprite@{csis3700\-::sprite}!sequence@{sequence}}
+\index{sequence@{sequence}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{sequence}]{\setlength{\rightskip}{0pt plus 5cm}{\bf image\-\_\-sequence}$\ast$ csis3700\-::sprite\-::sequence\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcsis3700_1_1sprite_aa65b73f9bf7d266e57236f5b606b36e1}
+My current image sequence \hypertarget{classcsis3700_1_1sprite_af12d2211006b3a184af6b70ed9e4235a}{\index{csis3700\-::sprite@{csis3700\-::sprite}!time@{time}}
+\index{time@{time}!csis3700::sprite@{csis3700\-::sprite}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}double csis3700\-::sprite\-::time\hspace{0.3cm}{\ttfamily [protected]}}}\label{classcsis3700_1_1sprite_af12d2211006b3a184af6b70ed9e4235a}
+The time in seconds since the world began ticking 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+sprite.\-h\item 
+sprite.\-C\end{DoxyCompactItemize}

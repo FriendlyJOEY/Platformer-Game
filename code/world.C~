@@ -1,0 +1,210 @@
+#include "world.h"
+#include <cassert>
+#include <algorithm>
+#include "sprite.h"
+#include "allegro5/allegro.h"
+#include "allegro5/allegro_image.h"
+#include "player_sprite.h"
+#include "obstruction_sprite.h"
+#include "collision.h"
+#include "keyboard_manager.h"
+#include "level1.h"
+#include "level2.h"
+#include <iostream>
+
+using namespace std;
+
+namespace csis3700 {
+
+  const float gravity_acceleration = 600;
+
+  void free_sprite(sprite* s) {
+    delete s;
+  }
+
+  world::world() {
+    font_20=al_load_ttf_font("Iron.ttf",40,0);
+  	level1 l;
+  	l.populate(* this);
+    bad=new badguy(600,645,800,600);
+    sprites.push_back(bad);
+    //sprites2.push_back(bad);
+    bad=new badguy(1350,645,1425,1280);
+    sprites.push_back(bad);
+    c=new coin(600,600,image_library::get_instance()->get("coinGold.png"));
+    sprites.push_back(c);
+  	player= new player_sprite(px,py);
+  	vec2d gravity(0,gravity_acceleration);
+  	player->add_force(gravity);
+    sprites.push_back(player);
+    points=0;
+    kills=1;
+    pr=new rectangle(px,py,50,54);
+    islevel2=false;
+  }
+
+  world::world(const world& other) {
+    assert(false); // do not copy worlds
+  }
+
+  world& world::operator=(const world& other) {
+    assert(false); // do not assign worlds
+  }
+
+  world::~world() {
+    for_each(sprites.begin(), sprites.end(), free_sprite);
+    sprites.clear();
+    for_each(sprites2.begin(), sprites2.end(), free_sprite);
+    sprites2.clear();
+  }
+
+  void world::handle_event(ALLEGRO_EVENT ev) {
+    keyboard_manager *n=new keyboard_manager();
+    /*while(n->is_key_down(ALLEGRO_KEY_RIGHT)==true){
+    	player->move_right();
+        px++;
+        pr=new rectangle(px,py,50,54);
+    }*/
+    if(ev.type==ALLEGRO_EVENT_KEY_DOWN)
+    {
+      if(ev.keyboard.keycode==ALLEGRO_KEY_RIGHT)
+      {
+      		player->move_right();
+        	player->set_velocity(200);
+
+      }
+      if(ev.keyboard.keycode==ALLEGRO_KEY_LEFT)
+      {
+      		player->move_left();
+        	player->set_velocity(-200);
+      }
+      if(ev.keyboard.keycode==ALLEGRO_KEY_SPACE){
+      		//player->add_force(vec2d(0,-100));
+      		if(player->jump()==true){
+      			player->set_velocity(vec2d(player->get_velocity().get_x(),-400));
+      		}
+
+      }
+
+    }
+    else if(ev.type==ALLEGRO_EVENT_KEY_UP)
+    {
+    	player->stand();
+      if(ev.keyboard.keycode==ALLEGRO_KEY_RIGHT)
+      {
+        	player->set_velocity(0);
+      }
+      if(ev.keyboard.keycode==ALLEGRO_KEY_LEFT)
+      {
+        	player->set_velocity(0);
+      }
+
+    }
+
+
+  }
+
+  void world::resolve_collisions() {
+  	int col_count=0;
+        for(vector<sprite*>::iterator it = sprites.begin(); it != sprites.end()-1; ++it){
+		    if(player->collides_with(**it)==true){
+                if((*it)->is_coin()){
+                    points+=100;
+                    sprites.erase(it);
+                    break;
+                }
+		        collision c(player,*it);
+			    if(c.is_active())
+				    c.resolve();
+		    }
+            if(player->is_kill()==true){
+                sprites.erase(it);
+                player->set_kill(false);
+                kills++;
+                points+=500;
+                break;
+            }
+        }
+
+
+  }
+
+  void world::advance_by_time(double dt) {
+        for(vector<sprite*>::iterator it = sprites.begin(); it != sprites.end(); ++it)
+            (*it)->advance_by_time(dt);
+    resolve_collisions();
+    if(player->get_y()>=700)
+    {
+        player->set_position(vec2d(60,650));
+        points-=300;
+    }
+    if(player->get_x()<=2048)
+    {
+        if(islevel2==false)
+        {
+
+            //for(vector<sprite*>::iterator it = sprites.begin(); it != sprites.end()-(kills+1); ++it){
+                //sprites.pop_back();
+
+            //}
+            //sprites2.push_back(player);
+            level2 l2;
+            l2.populate(* this);
+            bad=new badguy(900,450,1050,890);
+            sprites2.push_back(bad);
+            bad=new badguy(1550,550,1550,1550);
+            sprites2.push_back(bad);
+            c=new coin(600,400,image_library::get_instance()->get("coinGold.png"));
+            sprites2.push_back(c);
+            c=new coin(1350,600,image_library::get_instance()->get("coinGold.png"));
+            sprites2.push_back(c);
+            sprites2.push_back(player);
+            player->set_position(vec2d(60,650));
+            sprites=sprites2;
+            points+=1000;
+            points-=500;
+            islevel2=true;
+        }
+    }
+  }
+
+  void world::draw() {
+    al_clear_to_color(al_map_rgb(0,0,0));
+  	ALLEGRO_TRANSFORM t;
+  	al_identity_transform(&t);
+  	al_translate_transform(&t,-(player->get_x())+500,0);
+  	al_use_transform(&t);
+    al_draw_bitmap(background,0,0,0);
+    points_ss.str("");
+    points_ss<<"Points: "<<points;
+    points_s=points_ss.str();
+    al_draw_text(font_20,al_map_rgb(255,255,255),player->get_x()-500,0,0,points_s.c_str());
+
+        for(vector<sprite*>::iterator it = sprites.begin(); it != sprites.end(); ++it)
+            (*it)->draw();
+
+  }
+
+  void world::set_bg(ALLEGRO_BITMAP* b){
+  	background=b;
+  }
+
+  void world::set_player_cords(double x,double y){
+  	px=x;
+  	py=y;
+  }
+
+  void world::add_sprite(sprite* s){
+    sprites.push_back(s);
+  }
+
+  void world::add_sprite2(sprite* s){
+    sprites2.push_back(s);
+  }
+
+  void world::add_rect(float x, float y,float h,float w){
+    rect.push_back(new rectangle(x,y,h,w));
+
+  }
+
+}
